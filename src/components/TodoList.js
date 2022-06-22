@@ -4,12 +4,13 @@ import TodoForm from './TodoForm';
 import { getTodo, saveTodo } from "../utils/LocalStorage";
 
 const TodoList = () => {
-    const [todos, setTodos] = useState(getTodo("todos"));
+    const [todos, setTodos] = useState(getTodo("todos") || []);
 
     const addTodo = (value) => {
-      const newTodos = [...todos, {text: value, isCompleted: false}];
-      setTodos(newTodos);
-      saveTodo("todos", newTodos);
+        let currentTodo = [...todos];
+        currentTodo.push({text: value, isCompleted: false});
+        setTodos(currentTodo);
+        saveTodo("todos", currentTodo);
     }
     
     const toggleTodo = (index) => {
