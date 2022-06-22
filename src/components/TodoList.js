@@ -32,9 +32,9 @@ const TodoList = () => {
                 <TodoForm addTodo={addTodo} />
             </div>
             <ul>
-                {todos.map((todo, i) => (
+                {Array.isArray(todos) ? todos.map((todo, i) => (
                     <TodoItem todo={todo} key={i} index={i} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-                ))}
+                )) : null}
             </ul>
         </div>
     )
