@@ -50,21 +50,26 @@ li {
   gap: 0.5;
 }
 
-.todo-add-btn {
+.todo-add-update-btn {
   width: 15%;
   height: 37px;
   border: none;
   border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+.check {
   background-color: green;
   color: white;
 }
 
-.primary {
-  background-color: red;
+.update {
+  background-color: blue;
   color: white;
 }
 
-.secondary {
-  background-color: blue;
+.delete {
+  background-color: red;
   color: white;
 }

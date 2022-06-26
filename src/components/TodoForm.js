@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const TodoForm = ({addTodo}) => {
+const TodoForm = ({addTodo, updateTodo, statusTodoUpdate, getOneTodoText, indexUpdate}) => {
     const [value, setValue] = useState("");
+
+    useEffect(() => {
+        if(statusTodoUpdate){
+            setValue(() => getOneTodoText());
+        }else{
+            setValue("");
+        }
+    }, [statusTodoUpdate, getOneTodoText])
 
     const handleSubmit = e => {
         e.preventDefault();
         if(value){
-            addTodo(value);
+            if(statusTodoUpdate){
+                updateTodo(indexUpdate, value)
+            }else{
+                addTodo(value);
+            }
             setValue("");
         } else {
             alert("Please Add Todo")
@@ -16,7 +28,7 @@ const TodoForm = ({addTodo}) => {
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" className="todo-input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add todo" />
-            <button className="todo-add-btn" type="submit">Add</button>
+            <button className="todo-add-update-btn" type="submit">{ !statusTodoUpdate ? "Add" : "Update"}</button>
         </form>
     )
 }
