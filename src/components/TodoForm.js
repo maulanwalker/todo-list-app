@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { TodoContext } from "./Main";
 
-const TodoForm = ({addTodo, updateTodo, statusTodoUpdate, getOneTodoText, indexUpdate}) => {
+const TodoForm = () => {
     const [value, setValue] = useState("");
+    const { state, func } = useContext(TodoContext);
+    const [, , indexUpdate, statusTodoUpdate] = state;
+    const [addTodo, , updateTodo, getOneTodoText, , , ] = func;
 
     useEffect(() => {
         if(statusTodoUpdate){
