@@ -9,7 +9,7 @@ const TodoList = () => {
 
     return (
         <div>
-            <div>
+            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md">
                 <TodoForm />
             </div>
             <ul>
