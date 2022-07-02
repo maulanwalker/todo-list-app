@@ -9,10 +9,10 @@ const TodoList = () => {
 
     return (
         <div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md">
+            <div className="block p-6 rounded-lg shadow-lg bg-white">
                 <TodoForm />
             </div>
-            <ul>
+            <ul className="mt-4">
                 {Array.isArray(todos) ? todos.map((todo, i) => (
                     <TodoItem todo={todo} key={i} index={i} />
                 )) : null}

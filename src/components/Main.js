@@ -61,14 +61,16 @@ const Main = () => {
     }
 
     return (
-        <TodoContext.Provider value={{state: [ todos, todoForUpdate, indexUpdate, statusTodoUpdate ],
-        func: [ addTodo, toggleTodo, updateTodo, getOneTodoText, cancelUpdate, getTodoForUpdate, deleteTodo ]}}>
-            <TodoList todos={todos} todoForUpdate={todoForUpdate}
-            indexUpdate={indexUpdate} statusTodoUpdate={statusTodoUpdate}
-            addTodo={addTodo} toggleTodo={toggleTodo} updateTodo={updateTodo}
-            getOneTodoText={getOneTodoText} cancelUpdate={cancelUpdate}
-            getTodoForUpdate={getTodoForUpdate} deleteTodo={deleteTodo} />
-        </TodoContext.Provider>
+        <div className="">
+            <TodoContext.Provider value={{state: [ todos, todoForUpdate, indexUpdate, statusTodoUpdate ],
+            func: [ addTodo, toggleTodo, updateTodo, getOneTodoText, cancelUpdate, getTodoForUpdate, deleteTodo ]}}>
+                <TodoList todos={todos} todoForUpdate={todoForUpdate}
+                indexUpdate={indexUpdate} statusTodoUpdate={statusTodoUpdate}
+                addTodo={addTodo} toggleTodo={toggleTodo} updateTodo={updateTodo}
+                getOneTodoText={getOneTodoText} cancelUpdate={cancelUpdate}
+                getTodoForUpdate={getTodoForUpdate} deleteTodo={deleteTodo} />
+            </TodoContext.Provider>
+        </div>
     )
 }
 
