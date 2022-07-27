@@ -8,7 +8,7 @@ const TodoList = () => {
     const [todos] = state;
 
     return (
-        <div>
+        <>
             <div className="block p-6 rounded-lg shadow-lg bg-white">
                 <TodoForm />
             </div>
@@ -17,7 +17,7 @@ const TodoList = () => {
                     <TodoItem todo={todo} key={i} index={i} />
                 )) : null}
             </ul>
-        </div>
+        </>
     )
 }
 

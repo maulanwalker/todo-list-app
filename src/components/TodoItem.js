@@ -13,15 +13,30 @@ const TodoItem = ({todo, index}) => {
             </div>
             { index !== indexUpdate ?
                 <div className="block w-2/6">
-                    <button className="p-1 bg-green-500 rounded text-white" onClick={() => toggleTodo(index)} >
-                        Complete
-                    </button>
-                    <button className="p-1 bg-sky-500 rounded text-white" onClick={() => getTodoForUpdate(index)} >
-                        Update
-                    </button>
-                    <button className="p-1 bg-rose-500 rounded text-white" onClick={() => deleteTodo(index)} >
-                        Delete
-                    </button>
+                    { !todo.isCompleted ?
+                    <div>
+                        <button className="py-1 px-4 bg-green-600 rounded text-white" onClick={() => toggleTodo(index)} >
+                            Completed
+                        </button> 
+                        <button className="py-1 px-4 bg-sky-600 rounded text-white" onClick={() => getTodoForUpdate(index)} >
+                            Update
+                        </button> 
+                        <button className="py-1 px-4 bg-rose-400 rounded text-white" disabled onClick={() => deleteTodo(index)} >
+                            Delete
+                        </button>
+                    </div>:
+                    <div>
+                        <button className="py-1 px-4 bg-green-600 rounded text-white" onClick={() => toggleTodo(index)} >
+                            Undo
+                        </button>
+                        <button className="py-1 px-4 bg-sky-400 rounded text-white" disabled onClick={() => getTodoForUpdate(index)} >
+                            Update
+                        </button>
+                        <button className="py-1 px-4 bg-rose-600 rounded text-white" onClick={() => deleteTodo(index)} >
+                            Delete
+                        </button>
+                    </div>
+                    }
                 </div>
                 :
                 <button className="p-1 bg-slate-400 rounded text-white" onClick={() => cancelUpdate()} >

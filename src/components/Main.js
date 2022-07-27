@@ -19,7 +19,6 @@ const Main = () => {
     
     const toggleTodo = (index) => {
         const newTodos = [...todos];
-        console.log(index)
         newTodos[index].isCompleted = !newTodos[index].isCompleted;
         setTodos(newTodos);
         saveTodo("todos", newTodos);
