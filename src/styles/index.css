@@ -15,3 +15,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@layer components {
+  .btn-act {
+    @apply py-1 px-4 rounded text-white font-semibold;
+  }
+}
